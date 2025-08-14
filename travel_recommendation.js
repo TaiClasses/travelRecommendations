@@ -14,10 +14,8 @@ async function fetchTravelData() {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     travelData = await response.json();
-    console.log("Travel data loaded successfully:", travelData);
     return travelData;
   } catch (error) {
-    console.error("Error fetching travel data:", error);
     throw error;
   }
 }
@@ -347,7 +345,6 @@ function handleSearch() {
   }
 
   if (!travelData) {
-    console.log("Loading travel data...");
     fetchTravelData()
       .then(() => {
         performSearch(query);
@@ -363,14 +360,7 @@ function handleSearch() {
 }
 
 function performSearch(query) {
-  console.log("Searching for:", query);
-  console.log(
-    "Normalized variations:",
-    normalizeSearchTerm(query.toLowerCase().trim())
-  );
-
   const results = searchDestinations(query);
-  console.log("Search results found:", results.length);
 
   displayResults(results);
 }
@@ -418,11 +408,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-
-window.travelApp = {
-  fetchTravelData,
-  searchDestinations,
-  displayResults,
-  handleSearch,
-  handleClear,
-};

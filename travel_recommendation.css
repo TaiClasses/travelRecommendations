@@ -68,12 +68,6 @@ div {
   margin-bottom: 10px;
 }
 
-label {
-  display: inline-block;
-  width: 100px;
-}
-
-/* Generic button styles (not for search form) */
 button {
   padding: 7px 15px;
   background-color: rgb(50, 115, 115);
@@ -88,7 +82,6 @@ button:hover {
   background-color: rgba(50, 115, 115, 0.8);
 }
 
-/* Social media sidebar styles */
 aside {
   position: fixed;
   left: 20px;
@@ -129,7 +122,6 @@ aside {
   height: 24px;
 }
 
-/* Main content styles */
 main {
   color: white;
   z-index: 10;
